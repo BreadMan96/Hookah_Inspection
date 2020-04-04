@@ -4,4 +4,8 @@ require 'sinatra/reloader'
 
 get '/' do 
 	erb :index
+end 
+
+get '/hookah' do
+	erb :hookah
 end

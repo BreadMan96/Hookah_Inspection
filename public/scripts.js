@@ -1,7 +1,7 @@
-var x = 1;
-
 function something()
 {
+	var x = window.localStorage.getItem('num');
+	x = x * 1 + 1;
+	window.localStorage.setItem('num', x);
 	alert(x);
-	x = x + 1;
 }
