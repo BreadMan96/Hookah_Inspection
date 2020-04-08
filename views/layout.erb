@@ -27,14 +27,26 @@
         <a class="nav-link text-white" href="/">Главная</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/hookah">Кальяны</a>
+        <a class="nav-link text-white" href="/delivery">Доставка</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/question-answer">Вопросы-Ответы</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="/contacts">Контакты</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="/delivery">Доставка</a>
+
+    <ul class="navbar-right">
+
+      <!-- <li class="nav-item"><a class="nav-link text-white" href="#"> Корзина </a> </li> -->
+      <li>
+        <form action="/cart" method="post">
+          <input id="orders_button" class="btn btn-success" type="submit" />
+        </form>
       </li>
+
+    </ul>
+
     </ul>
     <%= yield %>
   </body>
