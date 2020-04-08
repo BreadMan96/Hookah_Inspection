@@ -1,0 +1,32 @@
+<h2>Ваша заказ:</h2>
+
+<div id="cart">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Кол-во</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% total_price = 0 %>
+    <% total_qty = 0 %>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item[0].title %></td>
+        <td><%= item[0].price %>₽</td>
+        <td><%= item[1] %></td>
+      </tr>
+      <% total_price += item[0].price * item[1].to_i %>
+      <% total_qty += item[1].to_i %>
+    <% end %>
+
+      <tr>
+        <td></td>
+        <td>Общая сумма заказа: <b> <%= total_price %>₽ </b> </td>
+        <td>Общее кол-во: <b> <%= total_qty %> </b> </td>
+      </tr>
+
+    </tbody>
+  </table>
