@@ -89,7 +89,7 @@ function cancel_order()
 	update_orders_input();
 	update_orders_button();
 
-	$('#cart').text('Ваша корзина пуста! Пожалуйста, добавьте сюда что-нибудь!');
+	$('#cart').text('Ваша корзина успешно очищена! Пожалуйста, добавьте сюда что-нибудь!');
 
 	return false;	
 }
