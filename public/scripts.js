@@ -6,11 +6,6 @@ function something()
 	alert(x);
 }
 
-$(function() {
-	update_orders_input();
-	update_orders_button();
-});
-
 // =================================================
 
 function add_to_cart(id)
@@ -83,6 +78,20 @@ function cart_get_orders()
 	}
 
 	return orders;
+}
+
+// =================================================
+
+function cancel_order()
+{
+	window.localStorage.clear();
+
+	update_orders_input();
+	update_orders_button();
+
+	$('#cart').text('Ваша корзина пуста! Пожалуйста, добавьте сюда что-нибудь!');
+
+	return false;	
 }
 
 // =================================================

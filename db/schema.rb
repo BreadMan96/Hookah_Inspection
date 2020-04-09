@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 2020_04_09_105141) do
     t.text "orders_input"
     t.text "name"
     t.text "phone"
+    t.text "descriptions"
     t.text "address"
-    t.text "is_best_offer"
+    t.boolean "age_plus"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

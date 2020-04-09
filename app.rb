@@ -30,6 +30,12 @@ get '/question-answer' do
 	erb :question_answer
 end
 
+post '/place_order' do
+	@order = Order.create params[:order]
+	
+	erb :order_placed
+end
+
 post '/cart' do
   @orders_input = params[:orderstring]
   @items = parse_orders_input @orders_input

@@ -31,34 +31,31 @@
     </tbody>
   </table>
 
-</div>
-
-
-<hr/>
+  <hr/>
 
 
 <form action="/place_order" method="POST">
 
-  <input name="order[scope]" type="hidden" value="<%= @orders_input %>" />
+  <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>" />
 
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Ваше имя: </label>
     <div class="col-sm-10">
-      <input type="text" class="form-control width: 350px" name="order[name]" maxlength="50" value="<%= @name %>" placeholder="Введите имя и фамилию" required>
+      <input type="text" class="form-control width: 350px" name="order[name]" maxlength="50" placeholder="Введите имя и фамилию" required>
     </div>
   </div>
 
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Ваш номер телефона: </label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="phone" name="order[phone]" value="<%= @phone %>" placeholder="Введите Ваш номер телефон" required>
+      <input type="text" class="form-control" id="phone" name="order[phone]" placeholder="Введите Ваш номер телефон" required>
     </div>
   </div>
 
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Комментарий к заказу: </label>
     <div class="col-sm-10">
-      <textarea oninput="getCount()" id="seo-title" class="form-control" rows="3" name="order[description]" maxlength="200" placeholder="При необходимости укажите комментарий к заказу" value="<%= @description %>"></textarea>
+      <textarea oninput="getCount()" id="seo-title" class="form-control" rows="3" name="order[descriptions]" maxlength="200" placeholder="При необходимости укажите комментарий к заказу"></textarea>
       <small class="inform-text text-muted">Кол-во оставшихся символов: <span class="badge badge-dark" id="count">200</span></small>
     </div>
   </div>
@@ -66,7 +63,7 @@
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Адрес доставки: </label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Напишите точный адрес доставки" name="order[address]" maxlength="100" value="<%= @address %>" required>
+      <input type="text" class="form-control" placeholder="Напишите точный адрес доставки" name="order[address]" maxlength="100" required>
     </div>
   </div>
 
@@ -74,7 +71,7 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-10">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="18+" name="order[age_plus]" value="Checking_for_age:Success" required>
+        <input class="form-check-input" type="checkbox" id="18+" name="order[age_plus]" required>
         <label class="form-check-label" for="18+">
           Я подтверждаю, что на момент заполнения данной формы мне исполнилось 18 лет!
         </label>
@@ -84,8 +81,13 @@
 
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn-lg btn-primary">Сделать заказ</button>
+      <button type="submit" class="btn btn-primary btn-lg">Сделать заказ</button>
+      <button onclick="return cancel_order()" class="btn btn-danger">Отменить</button>
     </div>
   </div>
 
 </form>
+
+</div>
+
+
