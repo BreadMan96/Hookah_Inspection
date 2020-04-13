@@ -117,3 +117,4 @@ function getCount() {
 }
 $("#seo-title").val().length;
 // Подсчёт кол-во символов
+

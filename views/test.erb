@@ -8,37 +8,192 @@
   <hr>
 
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+  <!-- <form action="/place_order" method="POST">
+
+    <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>" />
+
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Ваше имя: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control width: 350px" name="order[name]" maxlength="50" placeholder="Введите имя и фамилию" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Ваш номер телефона: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="phone" name="order[phone]" placeholder="Введите Ваш номер телефон" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Комментарий к заказу: </label>
+      <div class="col-sm-10">
+        <textarea oninput="getCount()" id="seo-title" class="form-control" rows="3" name="order[descriptions]" maxlength="200" placeholder="При необходимости укажите комментарий к заказу"></textarea>
+        <small class="inform-text text-muted">Кол-во оставшихся символов: <span class="badge badge-dark" id="count">200</span></small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Адрес доставки: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Напишите точный адрес доставки" name="order[address]" maxlength="100" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="18+" name="order[age_plus]" required>
+          <label class="form-check-label" for="18+">
+            Я подтверждаю, что на момент заполнения данной формы мне исполнилось 18 лет!
+          </label>
+        </div>
+      </div>
+    </div>
+ -->
+<!--     <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary btn-lg">Сделать заказ</button> -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">Сделать заказ</button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
+          Отменить
+        </button>
+<!--         <button onclick="return cancel_order()" class="btn btn-danger">Отменить</button>
+      </div>
+    </div>
+
+  </form>
+</div> -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Оформление заказа</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+  <div class="modal-body">
+
+    <form action="/place_order" method="POST">
+
+        <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>" />
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-form-label">Ваше имя: </label>
+          <input type="text" class="form-control" name="order[name]" maxlength="50" placeholder="Введите имя и фамилию" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3">Ваш номер телефона: </label>
+          <input type="text" class="form-control" id="phone" name="order[phone]" placeholder="Введите Ваш номер телефон" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail3">Комментарий к заказу: </label>
+          <textarea oninput="getCount()" id="seo-title" class="form-control" rows="3" name="order[descriptions]" maxlength="200" placeholder="При необходимости укажите комментарий к заказу"></textarea>
+          <small class="inform-text text-muted">Кол-во оставшихся символов: <span class="badge badge-dark" id="count">200</span></small>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail3">Адрес доставки: </label>
+          <input type="text" class="form-control" placeholder="Напишите точный адрес доставки" name="order[address]" maxlength="100" required>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-2"></div> 
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="18+" name="order[age_plus]" required>
+              <label class="form-check-label" for="18+">
+                Я подтверждаю, что на момент заполнения данной формы мне исполнилось 18 лет!
+              </label>
+            </div>
+          </div>
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </div>
+
+    </form>
+
+  </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Подтверждение действия</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
+        Вы уверены что хотите удалить всё содержимое корзины? Отменить это действие будет невозможно!
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button onclick="return cancel_order()" data-dismiss="modal" class="btn bstn-primary">Удалить заказ</button>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+<a href="tel:+7 (8142) 33 22 11">Позвоните нам</a>
+
+
+
+
+
+<li align="center"><a href="https://instagram.com/hoookah_inspection/" title="Наш инстаграм" class="btn-social"><img width="100" height="100" src="https://i.pinimg.com/originals/6f/e3/c4/6fe3c44d08750f60ba25c74ba8714895.png"></a> <a href="https://vk.com/hoookah_inspection/" title="Наш ВК" class="btn-social"><img width="80" height="80" src="https://cdn.icon-icons.com/icons2/1121/PNG/512/1486147202-social-media-circled-network10_79475.png"></a></li>
+
+<!-- <style type="text/css">
+  .dotted {
+list-style: none;
+font-family: 'Marck Script', cursive;
+}
+.dotted li {
+margin-bottom: 5px;
+border-bottom: 2px #404B51 dotted;
+font-size: 26px;
+line-height: 1;
+}
+.dotted li span:nth-child(odd) {
+padding-right: 6px; 
+color: #404B51;
+}
+.dotted li span:nth-child(even) {
+float: right; 
+padding-left: 6px;
+color: #35D1CE;
+}
+.dotted span {
+background: white;
+position: relative;
+bottom: -7px;
+}
+</style> -->
+
+
+<ul class="dotted">
+<li><span>Биг Мак</span><span>99 Р</span></li>
+<li><span>Роял Де Люкс</span><span>112 Р</span></li>
+<li><span>Картофель фри</span><span>42 Р</span></li>
+<li><span>Coca Cola 0,25</span><span>48 Р</span></li>
+<li><span>Латте</span><span>92 Р</span></li>
+</ul>

@@ -19,11 +19,11 @@ get '/' do
 end 
 
 get '/contacts' do
-	erb 'Тут контакты'
+	erb :contacts
 end
 
 get '/delivery' do
-	erb 'Здесь будет инфа по доставке'
+	erb :delivery
 end
 
 get '/question-answer' do

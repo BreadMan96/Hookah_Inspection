@@ -34,7 +34,7 @@
   <hr/>
 
 
-  <form action="/place_order" method="POST">
+ <!--  <form action="/place_order" method="POST">
 
     <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>" />
 
@@ -78,24 +78,24 @@
         </div>
       </div>
     </div>
-
+ -->
     <div class="form-group row">
       <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary btn-lg">Сделать заказ</button>
-        <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+        <button type="submit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-lg">Сделать заказ</button>
+        <!-- <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
           Отменить
-        </button>
-        <!-- <button onclick="return cancel_order()" class="btn btn-danger">Отменить</button> -->
+        </button> -->
+        <button onclick="return cancel_order()" class="btn btn-danger">Удалить заказ</button>
       </div>
     </div>
 
-  </form>
-</div>
+<!--   </form>
+</div> -->
 
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -105,7 +105,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Вы уверены что хотите удалить всё содержимое корзины? Отменить это действие будет невозможно!
+        Вы уверены что хотите удалить всё содержимое корзины? Отменить это действие будет невозможно.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
@@ -113,6 +113,70 @@
       </div>
     </div>
   </div>
+</div> -->
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Оформление заказа</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+  <div class="modal-body">
+
+    <form action="/place_order" method="POST">
+
+        <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>" />
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-form-label">Ваше имя: </label>
+          <input type="text" class="form-control" name="order[name]" maxlength="50" placeholder="Введите имя и фамилию" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3">Ваш номер телефона: </label>
+          <input type="text" class="form-control" id="phone" name="order[phone]" placeholder="Введите Ваш номер телефон" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail3">Комментарий к заказу: </label>
+          <textarea oninput="getCount()" id="seo-title" class="form-control" rows="3" name="order[descriptions]" maxlength="200" placeholder="При необходимости укажите комментарий к заказу"></textarea>
+          <small class="inform-text text-muted">Кол-во оставшихся символов: <span class="badge badge-dark" id="count">200</span></small>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail3">Адрес доставки: </label>
+          <input type="text" class="form-control" placeholder="Напишите точный адрес доставки" name="order[address]" maxlength="100" required>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-2"></div> 
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="18+" name="order[age_plus]" required>
+              <label class="form-check-label" for="18+">
+                Я подтверждаю, что на момент заполнения данной формы мне исполнилось 18 лет!
+              </label>
+            </div>
+          </div>
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary">Заказать</button>
+      </div>
+
+    </form>
+
+  </div>
+
+    </div>
+  </div>
 </div>
-
-

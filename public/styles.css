@@ -1,0 +1,24 @@
+.dotted {
+list-style: none;
+font-family: 'Marck Script', cursive;
+}
+.dotted li {
+margin-bottom: 5px;
+border-bottom: 2px #404B51 dotted;
+font-size: 26px;
+line-height: 1;
+}
+.dotted li span:nth-child(odd) {
+padding-right: 15px; 
+color: #404B51;
+}
+.dotted li span:nth-child(even) {
+float: right; 
+padding-left: 6px;
+color: #35D1CE;
+}
+.dotted span {
+background: white;
+position: relative;
+bottom: -7px;
+}
