@@ -59,7 +59,9 @@ get '/test' do
 	erb :test
 end
 
-
+get '/test2' do
+  erb :test2
+end
 
 
 def parse_orders_input orders_input

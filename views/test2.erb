@@ -1,0 +1,112 @@
+<br/>
+<div class="row">
+  <div class="product-item">
+    <div class="product-img">
+      <a href="">
+        <img src="https://lh4.googleusercontent.com/proxy/dN-bTvbUePyLk_R_d5YovqGpaBhBo0626BeuB387M_h9HSioPiEVv3UKswvbcXNKHRj27-uN9h5-oL9WMgYYDNWZNw7XUJASuWV4KyOpNgmLueCfHaKy2X33bzCTn9fV">
+      </a>
+    </div>
+    <div class="product-list">
+      <h3 align="center">Газировки</h3>
+      <hr/>
+      Напиток:
+      <select class="form-control">
+        <option>Coca-Cola</option>
+        <option>Coca-Cola Zero</option>
+        <option>Pepsi</option>
+        <option>Sprite</option>
+        <option>Fanta</option>
+      </select>
+      Объём:
+      <select class="form-control" id="gazirovka" gaz="0">
+        <option value="0">1 л.</option>
+        <option value="75">2 л.</option>
+      </select>
+
+      <hr/>
+      <span align="center" class="price"><b id="cost_g">100</b>₽</span>
+      <div class="actions">
+        <div align="center" class="add-to-cart">
+          <button class="btn btn-sm btn-success">Добавить в корзину</button>
+        </div>
+        <div class="add-to-links">
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="product-item">
+    <div class="product-img">
+      <a href="">
+        <img src="https://miyako15.ru/wp-content/uploads/dobro.png">
+      </a>
+    </div>
+    <div class="product-list">
+      <h3 align="center">Сок "Добрый"</h3>
+      <hr/>
+      Вкус:
+      <select class="form-control">
+        <option>Яблочный</option>
+        <option>Апельсиновый</option>
+        <option>Мультифрукт</option>
+      </select>
+      Объём:
+      <select class="form-control" id="sok" so="0">
+        <option value="0">1 л.</option>
+        <option value="80">2 л.</option>
+      </select>
+      <hr/>
+      <span align="center" class="price"><b id="cost_s">110</b>₽</span>
+      <div class="actions">
+        <div align="center" class="add-to-cart">
+          <button class="btn btn-sm btn-success">Добавить в корзину</button>
+        </div>
+        <div class="add-to-links">
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="product-item">
+    <div class="product-img">
+      <a href="">
+        <img src="https://lh3.googleusercontent.com/proxy/NmQ9ocTGLOGCEC40QLQfvWLP5fV7VjxiJF79AUNuU39Pzy1SN378HPc3PDA7f06Ej-T_RNvdKq3AwmvQNll7Awrcz7eMUgbuix2Ofi0CCCX-42w">
+      </a>
+    </div>
+    <div class="product-list">
+      <h3 align="center">Чай "Lipton"</h3>
+      <hr/>
+      Вкус:
+      <select class="form-control">
+        <option>Черный с лимоном</option>
+        <option>Зелёный с лаймом и мятой</option>
+      </select>
+      Объём:
+      <select class="form-control">
+        <option value="0">1.5 л.</option>
+      </select>
+      <hr/>
+      <span align="center" class="price"><b>120₽</b></span>
+      <div class="actions">
+        <div align="center" class="add-to-cart">
+          <button class="btn btn-sm btn-success">Добавить в корзину</button>
+        </div>
+        <div class="add-to-links">
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+<script>
+    gazirovka.onchange=function(){
+        a=this.getAttribute("gaz")
+        cost_g.innerHTML= (+cost_g.innerHTML)-a+(+this.value)
+        this.setAttribute("gaz",this.value)
+    }
+    sok.onchange=function(){
+        s=this.getAttribute("so")
+        cost_s.innerHTML= (+cost_s.innerHTML)-s+(+this.value)
+        this.setAttribute("so",this.value)
+    }
+</script>
